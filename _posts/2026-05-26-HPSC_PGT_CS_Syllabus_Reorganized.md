@@ -1,3 +1,10 @@
+---
+layout: post
+title: "HPSC PGT Computer Science Syllabus"
+date: 2026-05-26
+tags: [study, academic]
+---
+
 ## **HPSC PGT Computer Science** 
 
 Reorganized Syllabus — Easier Study Order 
@@ -8,13 +15,13 @@ _Topics sequenced: Foundational_ → _Intermediate_ → _Advanced_
 
 |**Phase**|**Topics**|**Priority**|
 |---|---|---|
-|1|Computer Basics, Number Systems, Boolean Logic|High###|
-|2|Python Programming (end-to-end)|High###|
-|3|File Handling + Data Structures & Algorithms|High###|
-|4|Operating Systems + Networking|Medium##|
-|5|Database + SQL + Python-SQL|High###|
-|6|TOC + Compiler Design + Software Engg.|Medium##|
-|7|Ethics, Society & Emerging Trends|Low#|
+|1|Computer Basics, Number Systems, Boolean Logic|High :star::star::star:|
+|2|Python Programming (end-to-end)|High :star::star::star:|
+|3|File Handling + Data Structures & Algorithms|High :star::star::star:|
+|4|Operating Systems + Networking|Medium :star::star:|
+|5|Database + SQL + Python-SQL|High :star::star::star:|
+|6|TOC + Compiler Design + Software Engg.|Medium :star::star:|
+|7|Ethics, Society & Emerging Trends|Low :star:|
 
 
 
@@ -344,3 +351,4 @@ _Topics sequenced: Foundational_ → _Intermediate_ → _Advanced_
 
 _HPSC TGT CS — Reorganized Syllabus | All topics sourced from official HPSC syllabus document_ 
 
+- 
