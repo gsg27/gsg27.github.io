@@ -1,0 +1,43 @@
+---
+layout: default
+title: Search
+---
+
+<h1>Search Notes</h1>
+
+<input type="text" id="search-input" placeholder="Search notes..." style="width:100%; padding:10px; font-size:16px; border-radius:6px; border:1px solid #555; background:#1e1e1e; color:#d4d4d4; margin-bottom:1rem;">
+<ul id="results" style="list-style:none; padding:0;"></ul>
+
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script>
+  const posts = [
+    {% for post in site.posts %}
+    {
+      title: {{ post.title | jsonify }},
+      url: {{ post.url | jsonify }},
+      content: {{ post.content | strip_html | truncatewords: 50 | jsonify }},
+      tags: {{ post.tags | jsonify }}
+    },
+    {% endfor %}
+  ];
+
+  const idx = lunr(function() {
+    this.ref("url");
+    this.field("title", { boost: 10 });
+    this.field("content");
+    this.field("tags", { boost: 5 });
+    posts.forEach(p => this.add(p));
+  });
+
+  document.getElementById("search-input").addEventListener("input", function() {
+    const query = this.value;
+    const results = query.length > 1 ? idx.search(query + "*") : [];
+    const list = document.getElementById("results");
+    list.innerHTML = results.length
+      ? results.map(r => {
+          const post = posts.find(p => p.url === r.ref);
+          return `<li style="padding:8px 0; border-bottom:1px solid #333;"><a href="${post.url}" style="font-size:16px;">${post.title}</a><br><small style="color:#888;">${post.tags.join(", ")}</small></li>`;
+        }).join("")
+      : query.length > 1 ? "<li style='color:#888;'>No results found.</li>" : "";
+  });
+</script>

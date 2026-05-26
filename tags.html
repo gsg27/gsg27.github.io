@@ -1,0 +1,18 @@
+---
+layout: default
+title: Tags
+---
+
+<h1>Tags</h1>
+
+{% assign all_tags = site.posts | map: "tags" | join: "," | split: "," | uniq | sort %}
+{% for tag in all_tags %}
+  <h3 id="{{ tag }}">{{ tag }}</h3>
+  <ul>
+    {% for post in site.posts %}
+      {% if post.tags contains tag %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a> — <small>{{ post.date | date: "%b %d, %Y" }}</small></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endfor %}

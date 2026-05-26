@@ -1,3 +1,18 @@
 title: My Notes
-description: Personal notes and thoughts
-theme: minima        # free built-in theme, change later
+description: Study and tech notes
+url: "https://gsg27.github.io"
+theme: minima
+
+minima:
+  skin: dark
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

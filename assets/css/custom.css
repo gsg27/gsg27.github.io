@@ -1,0 +1,36 @@
+pre, code {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  border-radius: 6px;
+  font-family: monospace;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+code {
+  padding: 2px 6px;
+}
+
+.tag {
+  display: inline-block;
+  background: #333;
+  color: #ccc;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-right: 4px;
+  text-decoration: none;
+}
+
+.tag:hover {
+  background: #555;
+}
+
+.post-meta {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
